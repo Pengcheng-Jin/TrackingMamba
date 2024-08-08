@@ -111,9 +111,11 @@ ${PROJECT_ROOT}
 
 **OTMJ (Object Tracking in Mountain Jungle)**
 
-The OTMJ dataset is an RGB dataset used for object tracking in mountainous jungle scenes.Compared to traditional datasets, OTMJ dataset features a wide range of challenging situations such as object occlusion, disappearance, camera shake, large-scale changes in object size, and low light. To more realistically simulate special conditions encountered in the jungle, we applied military camouflage to objects in some sequences.
+The OTMJ dataset is an RGB dataset used for object tracking in mountainous jungle scenes. Compared to traditional datasets, OTMJ dataset features a wide range of challenging situations such as object occlusion, disappearance, camera shake, large-scale changes in object size, and low light. To more realistically simulate special conditions encountered in the jungle, we applied military camouflage to objects in some sequences.
 
-This dataset can be obtained via [OTMJ](https://github.com/KustTeamWQW/OTMJ_Dataset) and put like this:
+For more specific information about OTMJ and how to obtain the dataset via [OTMJ](https://github.com/KustTeamWQW/OTMJ_Dataset).
+
+Put OTMJ like this:
 
 ```
 ${PROJECT_ROOT}
