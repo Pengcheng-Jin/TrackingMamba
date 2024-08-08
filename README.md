@@ -4,7 +4,7 @@
 
 Qingwang Wang, Liyao Zhou, Pengcheng Jin, Xin Qu, Hangwei Zhong, Haochen Song, Tao Shen
 
-![](E:\Users\Desktop\01\github\TrackingMamba\img\trackingmamba_framework.JPG)
+![](https://github.com/KustTeamWQW/TrackingMamba/blob/main/img/trackingmamba_framework.JPG)
 
 ## News
 
@@ -25,7 +25,7 @@ This paper proposes a new tracking framework based on the state space model, nam
 
 **TrackingMamba achieves higher accuracy with a simpler model framework, fewer parameters, and lower FLOPs.**
 
-![](E:\Users\Desktop\01\github\TrackingMamba\img\AUC_params.png)
+![](https://github.com/KustTeamWQW/TrackingMamba/blob/main/img/AUC_params.png)
 
 ## Environment Settings
 
