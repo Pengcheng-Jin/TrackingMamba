@@ -160,6 +160,21 @@ Run `analysis_desults. py` for performance evaluation, including AUC, PR, NPR.
 python tracking/analysis_results.py # need to modify tracker configs and names
 ```
 
+## Citation
+
+```
+@ARTICLE{10678881,
+  author={Wang, Qingwang and Zhou, Liyao and Jin, Pengcheng and Qu, Xin and Zhong, Hangwei and Song, Haochen and Shen, Tao},
+  journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing}, 
+  title={TrackingMamba: Visual State Space Model for Object Tracking}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1-12},
+  keywords={Object tracking;Autonomous aerial vehicles;Transformers;Feature extraction;Computational modeling;Accuracy;Visualization;UAV remote sensing;jungle scenes;Mamba;object tracking},
+  doi={10.1109/JSTARS.2024.3458938}}
+```
+
 ## Acknowledgments
 
 Thanks for the [OSTrack](https://github.com/botaoye/OSTrack), [Mamba](https://github.com/state-spaces/mamba) and [Vim](https://github.com/hustvl/Vim) library.
