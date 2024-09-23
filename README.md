@@ -36,7 +36,7 @@ conda create -n trackingmamba python=3.10.13
 conda activate trackingmamba
 ```
 
-**Install the package for Vim**
+**Install the package for [Vim](https://github.com/hustvl/Vim)**
 
 ```
 conda install cudatoolkit==11.8 -c nvidia
