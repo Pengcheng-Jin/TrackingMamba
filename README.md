@@ -8,6 +8,10 @@ Qingwang Wang, Liyao Zhou, Pengcheng Jin, Xin Qu, Hangwei Zhong, Haochen Song, T
 
 ## News
 
+[September 23, 2024]
+
+Our paper "TrackingMamba: Visual State Space Model for Object Tracking" has been accepted and published in the IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing. You can access the paper through the following DOI: 10.1109/JSTARS.2024.3458938.
+
 [August 7, 2024]
 
 Source code and weights are all released.
