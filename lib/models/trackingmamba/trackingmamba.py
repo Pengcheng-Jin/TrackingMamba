@@ -1,5 +1,5 @@
 """
-Basic mamda_fetrack model.
+Basic vim model.
 """
 import math
 import os
@@ -20,7 +20,7 @@ from lib.config.trackingmamba.config import cfg
 
 
 class TrackingMamba(nn.Module):
-    """ This is the base class for mamda_fetrack """
+    """ This is the base class for vim """
 
     def __init__(self, visionmamba, box_head, aux_loss=False, head_type="CORNER"):
         """ Initializes the model.
