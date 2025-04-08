@@ -432,7 +432,7 @@ class VisionMamba(nn.Module):
             x = self.pos_drop(x)                   # x.shape = torch.Size([B, 320, 384])
             
         if if_random_token_rank:                   #False
-            # 生成随机 shuffle 索引
+           
             shuffle_indices = torch.randperm(M)
 
             if isinstance(token_position, list):
@@ -441,15 +441,12 @@ class VisionMamba(nn.Module):
                 print("original value: ", x[0, token_position, 0])
             print("original token_position: ", token_position)
 
-            # 执行 shuffle
             x = x[:, shuffle_indices, :]
 
             if isinstance(token_position, list):
-                # 找到 cls token 在 shuffle 之后的新位置
                 new_token_position = [torch.where(shuffle_indices == token_position[i])[0].item() for i in range(len(token_position))]
                 token_position = new_token_position
             else:
-                # 找到 cls token 在 shuffle 之后的新位置
                 token_position = torch.where(shuffle_indices == token_position)[0].item()
 
             if isinstance(token_position, list):
