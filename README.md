@@ -25,6 +25,8 @@ This paper proposes a new tracking framework based on the state space model, nam
 |       | UAV123 | DTB70 | OTMJ |
 |:------|:------:|:-----:|:----:|
 | AUC(%) | 70.89  | 66.21 | 65.54 |
+
+
 **TrackingMamba achieves higher accuracy with a simpler model framework, fewer parameters, and lower FLOPs.**
 
 ![](https://github.com/KustTeamWQW/TrackingMamba/blob/main/img/AUC_params.png)
