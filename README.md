@@ -5,7 +5,7 @@
 Qingwang Wang, Liyao Zhou, Pengcheng Jin, Xin Qu, Hangwei Zhong, Haochen Song, Tao Shen
 
 ![](https://github.com/KustTeamWQW/TrackingMamba/blob/main/img/trackingmamba_framework.JPG)
-![](https://github.com/Pengcheng-Jin/TrackingMamba/blob/79962f1f0974575cb8aa533a25108d3fd605f226/img/AUC_params.png)
+
 ## News
 
 [September 23, 2024]
@@ -31,150 +31,19 @@ This paper proposes a new tracking framework based on the state space model, nam
 
 ![](https://github.com/KustTeamWQW/TrackingMamba/blob/main/img/AUC_params.png)
 
-## Environment Settings
 
-**Install environment using conda**
+### 效果预览：
+在 GitHub 上会显示为：
 
-```
+---
+
+# Environment Settings
+
+## Install environment using conda
+
+```bash
+# Create a new conda environment named 'trackingmamba' with Python 3.10.13
 conda create -n trackingmamba python=3.10.13
+
+# Activate the environment
 conda activate trackingmamba
-```
-
-**Install the package for [Vim](https://github.com/hustvl/Vim)**
-
-```
-conda install cudatoolkit==11.8 -c nvidia
-pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu118
-conda install -c "nvidia/label/cuda-11.8.0" cuda-nvcc
-conda install packaging
-pip install -r vim_requirements.txt
-```
-
-**Install the mamba-1.1.1 and casual-conv1d-1.1.3 for mamba**
-
-Download the [mamba-1.1.1](https://github.com/state-spaces/mamba/releases/download/v1.1.1/mamba_ssm-1.1.1+cu118torch2.1cxx11abiFALSE-cp310-cp310-linux_x86_64.whl) and [source code](https://github.com/Dao-AILab/causal-conv1d/archive/refs/tags/v1.1.3.zip) and place it in the project path of TrackingMamba. Go to source code and install the corresponding environment.
-
-```
-cd mamba-1.1.1
-pip install .
-```
-
-Download the [casual-conv1d-1.1.3](https://github.com/Dao-AILab/causal-conv1d/releases/download/v1.1.3/causal_conv1d-1.1.3+cu118torch2.1cxx11abiFALSE-cp310-cp310-linux_x86_64.whl) and [source code](https://github.com/Dao-AILab/causal-conv1d/archive/refs/tags/v1.1.3.zip) and place it in the project path of TrackingMamba. Go to source code and install the corresponding environment.
-
-```
-cd ..
-cd causal-conv1d-1.1.3
-pip install .
-```
-
-**Install the package for TrackingMamba**
-
-```
-bash install.sh
-```
-
-**Run the following command to set paths for this project**
-
-```
-python tracking/create_default_local_file.py --workspace_dir . --data_dir ./data --save_dir ./output
-```
-
-**After running this command, you can also modify paths by editing these two files**
-
-```
-lib/train/admin/local.py  # paths about training
-lib/test/evaluation/local.py  # paths about testing
-```
-
-## Data Preparation
-
-**Put the tracking datasets in `./data` It should look like this:**
-
-```
-${PROJECT_ROOT}
- -- data
-     -- lasot
-         |-- airplane
-         |-- basketball
-         |-- bear
-         ...
-     -- got10k
-         |-- test
-         |-- train
-         |-- val
-     -- coco
-         |-- annotations
-         |-- images
-     -- trackingnet
-         |-- TRAIN_0
-         |-- TRAIN_1
-         ...
-         |-- TRAIN_11
-         |-- TEST
-```
-
-**OTMJ(Object Tracking in Mountain Jungle) Dataset**
-
-The OTMJ dataset is an RGB dataset used for object tracking in mountainous jungle scenes. Compared to traditional datasets, OTMJ dataset features a wide range of challenging situations such as object occlusion, disappearance, camera shake, large-scale changes in object size, and low light. To more realistically simulate special conditions encountered in the jungle, we applied military camouflage to objects in some sequences.
-
-For more specific information about OTMJ and how to obtain the dataset via [OTMJ](https://github.com/KustTeamWQW/OTMJ_Dataset).
-
-Put OTMJ like this:
-
-```
-${PROJECT_ROOT}
- -- data
-     -- OTMJ
-         |-- 01
-         |-- 02
-         |-- 03
-```
-
-
-
-## Download Trained Weights for Model
-
-Download [pre-trained](https://pan.baidu.com/s/1-5q4hK2LWj16K6R2PHSdPw?pwd=AHUT) and put it under `$/pretrained_models`.
-
-## Training
-
-```
-python tracking/train.py --script trackingmamba --config trackingmamba --save_dir ./output --mode single --nproc_per_node 1 --use_wandb 0
-```
-
-## Test
-
-Download the model weights from [[Baidu Netdisk](https://pan.baidu.com/s/1nqiHEmr0yKuaMsQtEfqnNQ?pwd=3msn)], extract code: 3msn.
-
-Put the downloaded weights on  `$PROJECT_ROOT$/output/checkpoints/train/trackingmamba`
-
-Change the corresponding values of `lib/test/evaluation/local.py` to the actual benchmark saving paths
-
-```
-python tracking/test.py trackingmamba --dataset otmj --threads 1 --num_gpus 1
-```
-
-Run `analysis_desults. py` for performance evaluation, including AUC, PR, NPR.
-
-```
-python tracking/analysis_results.py # need to modify tracker configs and names
-```
-
-## Citation
-
-```
-@ARTICLE{10678881,
-  author={Wang, Qingwang and Zhou, Liyao and Jin, Pengcheng and Qu, Xin and Zhong, Hangwei and Song, Haochen and Shen, Tao},
-  journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing}, 
-  title={TrackingMamba: Visual State Space Model for Object Tracking}, 
-  year={2024},
-  volume={},
-  number={},
-  pages={1-12},
-  keywords={Object tracking;Autonomous aerial vehicles;Transformers;Feature extraction;Computational modeling;Accuracy;Visualization;UAV remote sensing;jungle scenes;Mamba;object tracking},
-  doi={10.1109/JSTARS.2024.3458938}}
-```
-
-## Acknowledgments
-
-Thanks for the [OSTrack](https://github.com/botaoye/OSTrack), [Mamba](https://github.com/state-spaces/mamba) and [Vim](https://github.com/hustvl/Vim) library.
