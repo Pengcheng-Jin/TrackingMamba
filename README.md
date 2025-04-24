@@ -5,7 +5,7 @@
 Qingwang Wang, Liyao Zhou, Pengcheng Jin, Xin Qu, Hangwei Zhong, Haochen Song, Tao Shen
 
 ![](https://github.com/KustTeamWQW/TrackingMamba/blob/main/img/trackingmamba_framework.JPG)
-
+![](https://github.com/Pengcheng-Jin/TrackingMamba/blob/79962f1f0974575cb8aa533a25108d3fd605f226/img/AUC_params.png)
 ## News
 
 [September 23, 2024]
