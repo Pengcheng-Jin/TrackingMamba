@@ -32,11 +32,6 @@ This paper proposes a new tracking framework based on the state space model, nam
 ![](https://github.com/KustTeamWQW/TrackingMamba/blob/main/img/AUC_params.png)
 
 
-### 效果预览：
-在 GitHub 上会显示为：
-
----
-
 # Environment Settings
 
 ## Install environment using conda
